@@ -58,10 +58,10 @@ export function Header() {
             <Image
               src="/logo-transparent.png"
               alt="Premium French IPTV"
-              width={160}
-              height={48}
-              className="h-8 w-auto object-contain md:h-10"
-              sizes="160px"
+              width={128}
+              height={40}
+              className="h-4 w-auto object-contain md:h-8"
+              sizes="(max-width: 768px) 64px, 128px"
               priority
             />
           </Link>
@@ -120,10 +120,10 @@ export function Header() {
                 <Image
                   src="/logo-transparent.png"
                   alt="Premium French IPTV"
-                  width={160}
-                  height={48}
-                  className="h-8 w-auto object-contain"
-                  sizes="160px"
+                  width={64}
+                  height={20}
+                  className="h-4 w-auto object-contain"
+                  sizes="64px"
                 />
                 <button
                   type="button"

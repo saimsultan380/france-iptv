@@ -16,9 +16,9 @@ export function Footer() {
           <Image
             src="/logo-transparent.png"
             alt="Premium French IPTV"
-            width={160}
-            height={48}
-            className="h-10 w-auto object-contain"
+            width={128}
+            height={40}
+            className="h-8 w-auto object-contain"
           />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
             IPTV France premium : chaînes françaises et internationales, sport en
