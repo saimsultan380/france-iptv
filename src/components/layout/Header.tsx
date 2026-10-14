@@ -49,18 +49,24 @@ export function Header() {
         className={cn(
           "sticky top-0 z-50 transition-all duration-300",
           scrolled
-            ? "border-b border-line bg-surface/90 py-2.5 shadow-[0_8px_30px_rgba(11,27,58,.06)] backdrop-blur-xl"
-            : "border-b border-line/60 bg-surface py-3",
+            ? "border-b border-line bg-surface/90 py-2 shadow-[0_8px_30px_rgba(11,27,58,.06)] backdrop-blur-xl md:py-2.5"
+            : "border-b border-line/60 bg-surface py-2 md:py-3",
         )}
       >
-        <Container className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
+        <Container className="flex items-center justify-between gap-3 md:gap-4">
+          <Link
+            href="/"
+            className="flex max-w-[92px] items-center sm:max-w-[110px] md:max-w-[130px]"
+            onClick={() => setOpen(false)}
+          >
             <Image
-              src="/logo.jpeg"
+              src="/logo-transparent.png"
               alt="Premium French IPTV"
-              width={80}
-              height={24}
-              className="h-3.5 w-auto object-contain md:h-5"
+              width={130}
+              height={40}
+              className="h-auto w-full object-contain object-left"
+              style={{ maxHeight: 28 }}
+              sizes="(max-width: 768px) 92px, 130px"
               priority
             />
           </Link>
@@ -117,11 +123,13 @@ export function Header() {
             <div className="flex h-full flex-col px-6 pb-8 pt-6">
               <div className="mb-6 flex items-center justify-between">
                 <Image
-                  src="/logo.jpeg"
+                  src="/logo-transparent.png"
                   alt="Premium French IPTV"
-                  width={80}
-                  height={24}
-                  className="h-3.5 w-auto object-contain"
+                  width={110}
+                  height={34}
+                  className="h-auto w-[92px] object-contain object-left"
+                  style={{ maxHeight: 28 }}
+                  sizes="92px"
                 />
                 <button
                   type="button"
