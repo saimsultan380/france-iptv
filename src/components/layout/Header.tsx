@@ -54,19 +54,14 @@ export function Header() {
         )}
       >
         <Container className="flex items-center justify-between gap-3 md:gap-4">
-          <Link
-            href="/"
-            className="flex max-w-[118px] items-center sm:max-w-[132px] md:max-w-[148px]"
-            onClick={() => setOpen(false)}
-          >
+          <Link href="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)}>
             <Image
               src="/logo-transparent.png"
               alt="Premium French IPTV"
-              width={148}
-              height={46}
-              className="h-auto w-full object-contain object-left"
-              style={{ maxHeight: 36 }}
-              sizes="(max-width: 768px) 118px, 148px"
+              width={160}
+              height={48}
+              className="h-8 w-auto object-contain md:h-10"
+              sizes="160px"
               priority
             />
           </Link>
@@ -125,11 +120,10 @@ export function Header() {
                 <Image
                   src="/logo-transparent.png"
                   alt="Premium French IPTV"
-                  width={118}
-                  height={36}
-                  className="h-auto w-[118px] object-contain object-left"
-                  style={{ maxHeight: 36 }}
-                  sizes="118px"
+                  width={160}
+                  height={48}
+                  className="h-8 w-auto object-contain"
+                  sizes="160px"
                 />
                 <button
                   type="button"

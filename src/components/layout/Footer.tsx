@@ -14,11 +14,11 @@ export function Footer() {
       <Container className="grid gap-12 py-14 md:grid-cols-[1.3fr_1fr_1fr] md:py-16">
         <div>
           <Image
-            src="/logo.jpeg"
+            src="/logo-transparent.png"
             alt="Premium French IPTV"
-            width={80}
-            height={24}
-            className="h-5 w-auto object-contain"
+            width={160}
+            height={48}
+            className="h-10 w-auto object-contain"
           />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
             IPTV France premium : chaînes françaises et internationales, sport en
