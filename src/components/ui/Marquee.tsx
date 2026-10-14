@@ -24,7 +24,7 @@ export function Marquee({ items, className }: MarqueeProps) {
             key={`${item.name}-${i}`}
             className="glass-card flex w-[200px] shrink-0 flex-col overflow-hidden rounded-2xl sm:w-[240px]"
           >
-            <div className="relative h-[140px] w-full overflow-hidden bg-surface-2 sm:h-[180px] md:h-[200px]">
+            <div className="relative h-[180px] w-full overflow-hidden bg-surface-2 sm:h-[220px] md:h-[250px]">
               <Image
                 src={item.image}
                 alt={item.name}
@@ -33,7 +33,7 @@ export function Marquee({ items, className }: MarqueeProps) {
                 sizes="240px"
               />
             </div>
-            <p className="px-3 py-2.5 text-sm font-medium text-text">
+            <p className="px-3 py-1.5 text-sm font-medium leading-tight text-text">
               {item.name}
             </p>
           </article>

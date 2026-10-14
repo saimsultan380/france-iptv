@@ -60,7 +60,7 @@ export function Header() {
               alt="Premium French IPTV"
               width={80}
               height={24}
-              className="h-5 w-auto object-contain md:h-[22px]"
+              className="h-3.5 w-auto object-contain md:h-5"
               priority
             />
           </Link>
@@ -121,7 +121,7 @@ export function Header() {
                   alt="Premium French IPTV"
                   width={80}
                   height={24}
-                  className="h-5 w-auto object-contain"
+                  className="h-3.5 w-auto object-contain"
                 />
                 <button
                   type="button"

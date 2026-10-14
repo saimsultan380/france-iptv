@@ -6,12 +6,15 @@ import Lenis from "lenis";
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
+    // Skip Lenis on touch / coarse pointers — native scroll feels smoother there
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    if (reduce || coarse) return;
 
     const lenis = new Lenis({
-      duration: 1.05,
+      duration: 0.85,
       smoothWheel: true,
-      touchMultiplier: 1.1,
+      touchMultiplier: 1,
+      wheelMultiplier: 0.95,
     });
 
     document.documentElement.classList.add("lenis");
