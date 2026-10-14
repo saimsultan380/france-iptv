@@ -30,7 +30,8 @@ export function Pricing() {
           </div>
 
           <div
-            className="inline-flex w-fit max-w-full shrink-0 self-start rounded-full bg-white p-1 ring-1 ring-line"
+            className="glass-chip inline-flex w-fit max-w-full shrink-0 self-start rounded-full p-1.5"
+            style={{ border: "1px solid rgba(11, 27, 58, 0.16)" }}
             role="tablist"
             aria-label="Type d'abonnement"
           >
@@ -44,7 +45,7 @@ export function Pricing() {
                 className={cn(
                   "rounded-full px-4 py-2 text-sm font-medium transition",
                   tier === t
-                    ? "bg-blue text-white"
+                    ? "bg-blue text-white shadow-sm"
                     : "text-muted hover:text-text",
                 )}
               >
@@ -65,10 +66,8 @@ export function Pricing() {
               exit={{ opacity: 0, y: -8 }}
               transition={{ delay: i * 0.04, duration: 0.35 }}
               className={cn(
-                "group relative flex flex-col rounded-2xl border bg-surface p-6 transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(11,27,58,.08)]",
-                plan.featured
-                  ? "border-red/40 shadow-[0_16px_40px_rgba(237,28,36,.08)]"
-                  : "border-line",
+                "glass-card glass-card-hover group relative flex flex-col rounded-2xl p-6 hover:-translate-y-0.5",
+                plan.featured && "ring-2 ring-red/35",
               )}
             >
               {plan.featured && (

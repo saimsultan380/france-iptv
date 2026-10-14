@@ -29,7 +29,7 @@ export function CookieBanner() {
   };
 
   return (
-    <div className="fixed inset-x-4 bottom-24 z-40 mx-auto max-w-lg rounded-2xl border border-line bg-surface p-4 shadow-[0_16px_40px_rgba(11,27,58,.12)] md:inset-x-auto md:bottom-8 md:left-8 md:right-auto">
+    <div className="glass-panel fixed inset-x-4 bottom-24 z-40 mx-auto max-w-lg rounded-2xl p-4 md:inset-x-auto md:bottom-8 md:left-8 md:right-auto">
       <p className="text-sm leading-relaxed text-muted">
         Nous utilisons des cookies essentiels et, avec votre accord, des mesures
         d&apos;audience. Voir la{" "}

@@ -1,6 +1,6 @@
 import { WHY_TILES } from "@/data/home";
 import { Section } from "@/components/ui/Section";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
 export function WhyUs() {
@@ -16,13 +16,12 @@ export function WhyUs() {
         <div className="france-hairline mt-5 h-[2px] w-20" />
       </Reveal>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-6">
+      <Stagger className="mt-12 grid gap-4 md:grid-cols-6" stagger={0.09} delay={0.1}>
         {WHY_TILES.map((tile, i) => (
-          <Reveal
+          <StaggerItem
             key={tile.id}
-            delay={i * 0.05}
             className={cn(
-              "rounded-2xl border border-line bg-bg p-6 transition duration-300 hover:border-blue/20 hover:shadow-[0_12px_36px_rgba(0,35,92,.06)] md:p-7",
+              "glass-card glass-card-hover rounded-2xl p-6 md:p-7",
               tile.size === "large" && "md:col-span-3 md:row-span-2 md:min-h-[280px]",
               tile.size === "medium" && "md:col-span-3",
               tile.size === "small" && "md:col-span-3",
@@ -39,9 +38,9 @@ export function WhyUs() {
                 {tile.description}
               </p>
             </div>
-          </Reveal>
+          </StaggerItem>
         ))}
-      </div>
+      </Stagger>
     </Section>
   );
 }

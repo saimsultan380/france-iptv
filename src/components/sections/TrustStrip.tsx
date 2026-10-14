@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInView, useReducedMotion } from "motion/react";
 import { TRUST_STATS } from "@/data/home";
 import { Container } from "@/components/ui/Container";
+import { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
 function CountUp({
@@ -22,7 +23,7 @@ function CountUp({
 
   useEffect(() => {
     if (!inView || display || reduce) return;
-    const duration = 1100;
+    const duration = 1200;
     const start = performance.now();
     let frame = 0;
 
@@ -46,15 +47,14 @@ function CountUp({
 
 export function TrustStrip() {
   return (
-    <section className="border-y border-line bg-white py-7 md:py-12">
+    <section className="border-y border-line/60 bg-transparent py-7 md:py-12">
       <Container>
-        <div className="grid grid-cols-4 gap-2 md:grid-cols-5 md:gap-4">
+        <Stagger className="grid grid-cols-4 gap-2 md:grid-cols-5 md:gap-4" stagger={0.07}>
           {TRUST_STATS.map((stat, i) => (
-            <div
+            <StaggerItem
               key={stat.label}
               className={cn(
                 "text-center md:text-left",
-                /* Mobile: keep 4 stats in one row — hide Installation */
                 i === TRUST_STATS.length - 1 && "hidden md:block",
               )}
             >
@@ -68,9 +68,9 @@ export function TrustStrip() {
               <p className="mt-1 text-[10px] leading-tight text-muted sm:text-xs md:mt-2 md:text-sm">
                 {stat.label}
               </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </Container>
     </section>
   );

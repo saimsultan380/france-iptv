@@ -1,19 +1,19 @@
 import Image from "next/image";
 import { SPORT_CHIPS } from "@/data/home";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Container";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export function Sport() {
   return (
-    <section className="relative overflow-hidden border-y border-line bg-white py-20 md:py-24 lg:py-28">
+    <section className="relative overflow-hidden border-y border-line/60 bg-transparent py-20 md:py-24 lg:py-28">
       <div className="france-hairline absolute inset-x-0 top-0 h-[2px]" />
 
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full bg-surface-2 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-text ring-1 ring-line">
+            <div className="glass-chip inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-text">
               <span className="size-1.5 rounded-full bg-red" />
               Sport en direct
             </div>
@@ -84,26 +84,27 @@ export function Sport() {
           </Reveal>
         </div>
 
-        <Reveal className="mt-12 md:mt-14">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-            Compétitions disponibles
-          </p>
-          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-12 md:mt-14">
+          <Reveal>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+              Compétitions disponibles
+            </p>
+          </Reveal>
+          <Stagger className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4" stagger={0.05} delay={0.08}>
             {SPORT_CHIPS.map((chip, i) => (
-              <div
-                key={chip}
-                className="group flex items-center gap-3 rounded-2xl border border-line bg-white px-3.5 py-3.5 transition hover:border-blue/25 hover:shadow-[0_10px_28px_rgba(0,35,92,.06)]"
-              >
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-blue font-display text-xs font-semibold text-white tabular">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="text-sm font-medium leading-snug text-text">
-                  {chip}
-                </span>
-              </div>
+              <StaggerItem key={chip}>
+                <div className="glass-card glass-card-hover group flex items-center gap-3 rounded-2xl px-3.5 py-3.5">
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-blue font-display text-xs font-semibold text-white tabular">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-sm font-medium leading-snug text-text">
+                    {chip}
+                  </span>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
-        </Reveal>
+          </Stagger>
+        </div>
       </Container>
     </section>
   );

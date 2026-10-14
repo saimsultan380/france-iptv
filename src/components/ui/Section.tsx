@@ -11,9 +11,9 @@ type SectionProps = {
 };
 
 const tones = {
-  light: "bg-white text-text",
-  white: "bg-white text-text",
-  soft: "bg-white text-text",
+  light: "bg-transparent text-text",
+  white: "bg-transparent text-text",
+  soft: "bg-transparent text-text",
   navy: "bg-blue text-white",
 };
 

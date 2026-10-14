@@ -11,33 +11,33 @@ export function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden bg-surface">
+    <section className="relative overflow-hidden bg-transparent">
       <div className="france-hairline h-[2px] w-full" />
 
       <Container className="grid items-center gap-8 py-10 md:gap-12 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
         <div>
           <motion.p
-            initial={{ opacity: 0, y: reduce ? 0 : 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: reduce ? 0 : 16, filter: reduce ? "none" : "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             className="text-xs font-semibold uppercase tracking-[0.2em] text-muted"
           >
             Premium French IPTV
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: reduce ? 0 : 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.05 }}
+            initial={{ opacity: 0, y: reduce ? 0 : 22, filter: reduce ? "none" : "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
             className="font-display mt-4 max-w-[12ch] text-[clamp(2.1rem,5.5vw,4.5rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-text"
           >
             Premium IPTV France en qualité 4K Ultra HD
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: reduce ? 0 : 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.12 }}
+            initial={{ opacity: 0, y: reduce ? 0 : 18, filter: reduce ? "none" : "blur(6px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
             className="mt-4 max-w-lg text-sm leading-relaxed text-muted md:mt-5 md:text-lg"
           >
             Streaming fluide, chaînes françaises et internationales, films, séries
@@ -45,9 +45,9 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: reduce ? 0 : 14 }}
+            initial={{ opacity: 0, y: reduce ? 0 : 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.18 }}
+            transition={{ duration: 0.65, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
             className="mt-6 flex flex-row items-center gap-2 sm:mt-8 sm:gap-3"
           >
             <WhatsAppButton
@@ -89,7 +89,7 @@ export function Hero() {
             {TRUST_CHIPS.map((chip) => (
               <li
                 key={chip}
-                className="rounded-full bg-surface-2 px-3 py-1.5 text-xs font-medium text-muted"
+                className="glass-chip rounded-full px-3 py-1.5 text-xs font-medium text-muted"
               >
                 {chip}
               </li>
@@ -98,9 +98,9 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: reduce ? 0 : 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
+          initial={{ opacity: 0, y: reduce ? 0 : 28, scale: reduce ? 1 : 0.96, filter: reduce ? "none" : "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-[420px] lg:max-w-none"
         >
           <div className="relative overflow-hidden">

@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     images: ["/logo.jpeg"],
   },
   icons: {
-    icon: [{ url: "/logo.jpeg", type: "image/jpeg" }],
-    shortcut: ["/logo.jpeg"],
-    apple: [{ url: "/logo.jpeg", type: "image/jpeg" }],
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    shortcut: ["/favicon.png"],
+    apple: [{ url: "/favicon.png", type: "image/png" }],
   },
   robots: { index: true, follow: true },
 };

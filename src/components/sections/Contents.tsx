@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 
 export function Contents() {
   return (
-    <section className="bg-surface py-16 md:py-20">
+    <section className="bg-transparent py-16 md:py-20">
       <Container>
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">

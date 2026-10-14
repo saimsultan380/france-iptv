@@ -3,12 +3,14 @@ import Link from "next/link";
 import { FOOTER_LINKS, LEGAL_LINKS } from "@/data/nav";
 import { CONTACT_EMAIL, WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-surface">
+    <footer className="border-t border-line bg-surface/80 backdrop-blur-sm">
       <div className="france-hairline h-[2px] w-full" />
 
+      <Reveal>
       <Container className="grid gap-12 py-14 md:grid-cols-[1.3fr_1fr_1fr] md:py-16">
         <div>
           <Image
@@ -70,6 +72,7 @@ export function Footer() {
           </ul>
         </div>
       </Container>
+      </Reveal>
 
       <Container className="flex flex-col gap-3 border-t border-line py-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Premium French IPTV. Tous droits réservés.</p>

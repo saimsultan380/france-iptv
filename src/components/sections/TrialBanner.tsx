@@ -8,7 +8,7 @@ export function TrialBanner() {
   return (
     <Section tone="soft" className="!py-16 md:!py-20">
       <Reveal>
-        <div className="grid rounded-3xl border border-line bg-white lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="glass-panel grid rounded-3xl lg:grid-cols-[1.05fr_0.95fr]">
           <div className="flex flex-col justify-center px-6 py-10 sm:px-8 md:px-12 md:py-14">
             <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
               Vous souhaitez tester avant d&apos;acheter&nbsp;?

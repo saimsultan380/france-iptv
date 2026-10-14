@@ -36,7 +36,7 @@ export function Faq() {
           </p>
         </Reveal>
         <Reveal delay={0.06}>
-          <div className="rounded-3xl border border-line bg-surface px-5 md:px-8">
+          <div className="glass-panel rounded-3xl px-5 md:px-8">
             <FaqAccordion items={HOME_FAQ} />
           </div>
         </Reveal>

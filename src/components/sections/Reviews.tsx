@@ -86,7 +86,7 @@ export function Reviews() {
                 "group relative flex h-full flex-col rounded-3xl border p-6 text-left transition duration-300",
                 active
                   ? "border-transparent bg-blue text-white shadow-[0_24px_50px_rgba(0,35,92,.28)]"
-                  : "border-line bg-white hover:-translate-y-1 hover:border-blue/25 hover:shadow-[0_16px_40px_rgba(0,35,92,.08)]",
+                  : "glass-card glass-card-hover hover:-translate-y-1",
               )}
             >
               <div className="france-hairline absolute inset-x-6 top-0 h-[2px] rounded-full opacity-80" />
