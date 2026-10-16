@@ -77,16 +77,16 @@ export function Hero() {
           initial={{ opacity: 0, y: reduce ? 0 : 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="relative mx-auto w-full max-w-[520px] lg:max-w-none"
+          className="relative w-full -mx-5 md:-mx-8 lg:mx-0"
         >
-          <div className="relative aspect-[16/10] max-h-[220px] overflow-hidden rounded-lg bg-surface-2 sm:aspect-[5/4] sm:max-h-none">
+          <div className="relative aspect-[16/10] max-h-[220px] overflow-hidden bg-surface-2 sm:aspect-[5/4] sm:max-h-none lg:rounded-lg">
             <Image
               src="/hero-new.jpg"
               alt="Télécommande et écran TV — Premium French IPTV"
               fill
               priority
               className="object-cover object-center"
-              sizes="(max-width: 1024px) 520px, 560px"
+              sizes="(max-width: 1024px) 100vw, 560px"
             />
           </div>
         </motion.div>
