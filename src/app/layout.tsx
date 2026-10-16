@@ -1,19 +1,7 @@
 import type { Metadata } from "next";
-import { Manrope, Syne } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
+import { display, manrope } from "./fonts";
 import "./globals.css";
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const display = Syne({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://premiumfrenchiptv.fr"),
