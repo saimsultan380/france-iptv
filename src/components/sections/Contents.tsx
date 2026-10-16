@@ -1,24 +1,32 @@
-import { CONTENT_ITEMS } from "@/data/home";
+import { CONTENTS_SECTION } from "@/data/home";
 import { Reveal } from "@/components/ui/Reveal";
-import { Marquee } from "@/components/ui/Marquee";
-import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { ContentSlider } from "@/components/ui/ContentSlider";
 
 export function Contents() {
   return (
-    <section className="bg-transparent py-16 md:py-20">
-      <Container>
-        <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-            Contenus
-          </p>
-          <h2 className="font-display mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-            Du sport au cinéma, tout ce que vous regardez — au même endroit.
-          </h2>
-        </Reveal>
-      </Container>
-      <div className="mt-10">
-        <Marquee items={CONTENT_ITEMS} />
-      </div>
-    </section>
+    <Section id="contenus" tone="white" hairline>
+      <Reveal>
+        <h2 className="font-display max-w-3xl text-3xl leading-tight tracking-tight md:text-[2.6rem]">
+          {CONTENTS_SECTION.h2}
+        </h2>
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
+          {CONTENTS_SECTION.intro}
+        </p>
+      </Reveal>
+
+      <Reveal delay={0.06} className="mt-10 md:mt-12">
+        <ContentSlider items={CONTENTS_SECTION.items} />
+      </Reveal>
+
+      <Reveal delay={0.08}>
+        <p className="mt-10 text-sm font-medium text-text md:text-[15px]">
+          {CONTENTS_SECTION.qualityNote}
+        </p>
+        <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted">
+          {CONTENTS_SECTION.footer}
+        </p>
+      </Reveal>
+    </Section>
   );
 }

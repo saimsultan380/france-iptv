@@ -1,45 +1,40 @@
-import { HOW_STEPS } from "@/data/home";
+import { SETUP_SECTION } from "@/data/home";
 import { Section } from "@/components/ui/Section";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function HowItWorks() {
   return (
-    <Section tone="white">
+    <Section id="installation" tone="white" hairline>
       <Reveal>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-          Comment ça marche
-        </p>
-        <h2 className="font-display mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-[2.75rem]">
-          Trois étapes. C&apos;est tout.
+        <h2 className="font-display max-w-3xl text-3xl leading-tight tracking-tight md:text-[2.6rem]">
+          {SETUP_SECTION.h2}
         </h2>
-      </Reveal>
-
-      <div className="relative mt-12">
-        <div className="pointer-events-none absolute left-[16%] right-[16%] top-7 hidden h-px bg-line md:block" />
-        <Stagger className="grid gap-8 md:grid-cols-3 md:gap-8" stagger={0.12} delay={0.08}>
-          {HOW_STEPS.map((step) => (
-            <StaggerItem key={step.step}>
-              <div className="relative">
-                <div className="flex size-14 items-center justify-center rounded-full bg-blue font-display text-lg font-semibold text-white">
-                  {step.step}
-                </div>
-                <h3 className="font-display mt-6 text-xl font-semibold tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted md:text-[15px]">
-                  {step.description}
-                </p>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </div>
-
-      <Reveal className="mt-10" delay={0.15}>
-        <p className="text-sm text-muted">
-          Simple, rapide et sans installation complexe.
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
+          {SETUP_SECTION.intro}
         </p>
       </Reveal>
+
+      <ol className="mt-12 space-y-0 border-t border-line">
+        {SETUP_SECTION.steps.map((step, i) => (
+          <Reveal key={step.h3}>
+            <li className="grid gap-4 border-b border-line py-8 md:grid-cols-[4rem_1fr] md:gap-8">
+              <span
+                className={`font-display text-3xl tabular ${
+                  i % 2 === 0 ? "text-blue/45" : "text-red/45"
+                }`}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 className="font-display text-xl tracking-tight md:text-2xl">
+                  {step.h3}
+                </h3>
+                <p className="mt-2 text-base leading-relaxed text-muted">{step.text}</p>
+              </div>
+            </li>
+          </Reveal>
+        ))}
+      </ol>
     </Section>
   );
 }

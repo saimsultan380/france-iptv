@@ -11,9 +11,9 @@ type SectionProps = {
 };
 
 const tones = {
-  light: "bg-transparent text-text",
-  white: "bg-transparent text-text",
-  soft: "bg-transparent text-text",
+  light: "bg-white text-text",
+  white: "bg-white text-text",
+  soft: "bg-white text-text",
   navy: "bg-blue text-white",
 };
 
@@ -28,11 +28,9 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("relative py-20 md:py-24 lg:py-28", tones[tone], className)}
+      className={cn("relative py-16 md:py-20 lg:py-24", tones[tone], className)}
     >
-      {hairline && (
-        <div className="france-hairline absolute inset-x-0 top-0 h-[2px]" />
-      )}
+      {hairline && <div className="absolute inset-x-0 top-0 h-px bg-line" />}
       <Container className={containerClassName}>{children}</Container>
     </section>
   );

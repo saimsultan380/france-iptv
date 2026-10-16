@@ -29,7 +29,7 @@ export function Footer() {
               href="https://wa.me/33644655224"
               target="_blank"
               rel="noopener noreferrer"
-              className="block font-medium text-text transition hover:text-blue-bright"
+              className="block font-medium text-text transition hover:text-red"
             >
               WhatsApp {WHATSAPP_DISPLAY}
             </a>
@@ -49,7 +49,7 @@ export function Footer() {
           <ul className="mt-5 space-y-3">
             {FOOTER_LINKS.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-sm text-text/90 transition hover:text-blue-bright">
+                <Link href={link.href} className="text-sm text-text/90 transition hover:text-blue">
                   {link.label}
                 </Link>
               </li>
@@ -64,7 +64,7 @@ export function Footer() {
           <ul className="mt-5 space-y-3">
             {LEGAL_LINKS.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-sm text-text/90 transition hover:text-blue-bright">
+                <Link href={link.href} className="text-sm text-text/90 transition hover:text-red">
                   {link.label}
                 </Link>
               </li>

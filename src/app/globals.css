@@ -3,20 +3,20 @@
 :root {
   --bg: #ffffff;
   --surface: #ffffff;
-  --surface-2: #f3f4f6;
-  --line: rgba(11, 27, 58, 0.1);
-  --text: #0b1b3a;
-  --muted: #5c6b86;
+  --surface-2: #f5f5f5;
+  --line: rgba(8, 15, 35, 0.12);
+  --text: #060d1f;
+  --muted: #2f3b52;
   --blue: #00235c;
   --blue-bright: #1a4db8;
   --red: #ed1c24;
   --france-blue: #00235c;
   --france-red: #ed1c24;
   --cream: #ffffff;
-  --cream-text: #0b1b3a;
-  --cream-muted: #5c6b86;
+  --cream-text: #060d1f;
+  --cream-muted: #2f3b52;
   --whatsapp: #25d366;
-  --ink: #0b1b3a;
+  --ink: #060d1f;
 }
 
 @theme inline {
@@ -33,7 +33,7 @@
   --color-cream-text: var(--cream-text);
   --color-cream-muted: var(--cream-muted);
   --color-whatsapp: var(--whatsapp);
-  --font-sans: var(--font-geist);
+  --font-sans: var(--font-manrope);
   --font-display: var(--font-display);
 }
 
@@ -53,20 +53,15 @@ html.lenis body {
 body {
   margin: 0;
   min-height: 100%;
-  /* Soft ambient so Apple glass blur can read on a white page */
-  background:
-    radial-gradient(ellipse 90% 55% at 0% 0%, rgba(0, 35, 92, 0.055), transparent 55%),
-    radial-gradient(ellipse 70% 45% at 100% 15%, rgba(237, 28, 36, 0.035), transparent 50%),
-    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(0, 35, 92, 0.04), transparent 55%),
-    #ffffff;
+  background: var(--bg);
   color: var(--text);
-  font-family: var(--font-geist), system-ui, sans-serif;
+  font-family: var(--font-manrope), system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--blue) 18%, white);
+  background: color-mix(in srgb, var(--blue) 16%, white);
   color: var(--text);
 }
 
@@ -85,7 +80,8 @@ img {
 }
 
 .font-display {
-  font-family: var(--font-display), var(--font-geist), sans-serif;
+  font-family: var(--font-display), var(--font-manrope), system-ui, sans-serif;
+  font-weight: 700;
 }
 
 .france-hairline {
@@ -114,65 +110,61 @@ img {
 }
 
 .animate-marquee {
-  animation: marquee 42s linear infinite;
+  animation: marquee 48s linear infinite;
 }
 
-/* —— Apple-style frosted glass —— */
+/* Clean surfaces — no frosted-glass template look */
+.surface-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.surface-card-hover {
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.surface-card-hover:hover {
+  border-color: rgba(0, 35, 92, 0.22);
+  box-shadow: 0 12px 32px rgba(0, 35, 92, 0.06);
+}
+
+/* Keep old class names mapped so leftover refs don't break */
 .glass-card {
-  background: rgba(255, 255, 255, 0.72);
-  /* Lighter blur = smoother scroll; still reads as glass */
-  -webkit-backdrop-filter: saturate(140%) blur(12px);
-  backdrop-filter: saturate(140%) blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow:
-    0 8px 32px rgba(0, 35, 92, 0.06),
-    0 1px 2px rgba(0, 35, 92, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    inset 0 0 0 0.5px rgba(255, 255, 255, 0.45);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .glass-card-hover {
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .glass-card-hover:hover {
-  background: rgba(255, 255, 255, 0.72);
-  border-color: rgba(255, 255, 255, 0.9);
-  box-shadow:
-    0 16px 40px rgba(0, 35, 92, 0.1),
-    0 2px 6px rgba(0, 35, 92, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 1),
-    inset 0 0 0 0.5px rgba(255, 255, 255, 0.55);
+  border-color: rgba(0, 35, 92, 0.22);
+  box-shadow: 0 12px 32px rgba(0, 35, 92, 0.06);
+  background: var(--surface);
 }
 
 .glass-chip {
-  background: rgba(255, 255, 255, 0.7);
-  -webkit-backdrop-filter: saturate(130%) blur(8px);
-  backdrop-filter: saturate(130%) blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.78);
-  -webkit-backdrop-filter: saturate(140%) blur(14px);
-  backdrop-filter: saturate(140%) blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  box-shadow:
-    0 12px 40px rgba(0, 35, 92, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
-}
-
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .glass-card,
-  .glass-chip,
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.92);
-  }
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(11, 27, 58, 0.03);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

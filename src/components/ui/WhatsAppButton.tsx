@@ -9,8 +9,14 @@ import { cn } from "@/lib/cn";
 type WhatsAppButtonProps = {
   label: string;
   message: string;
-  /** primary = blue · outline = red · inverse = white fill · outlineLight = white border on dark */
-  variant?: "primary" | "outline" | "inverse" | "outlineLight";
+  /** primary = blue · accent = red solid · outline = red border · outlineBlue = blue border */
+  variant?:
+    | "primary"
+    | "accent"
+    | "outline"
+    | "outlineBlue"
+    | "inverse"
+    | "outlineLight";
   size?: "sm" | "md" | "lg";
   className?: string;
   showIcon?: boolean;

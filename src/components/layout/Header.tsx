@@ -31,14 +31,18 @@ export function Header() {
 
   return (
     <>
-      <div className="relative z-[60] border-b border-line bg-blue text-[11px] text-white/80 sm:text-xs">
+      <div className="relative z-[60] bg-blue text-[11px] text-white/80 sm:text-xs">
+        <div className="france-hairline h-[2px] w-full" />
         <Container className="flex h-8 items-center justify-between gap-4">
-          <p className="truncate">Activation instantanée · Support 24h/24 7j/7</p>
+          <p className="truncate">
+            <span className="text-red">●</span>{" "}
+            Activation instantanée · Support 24h/24 7j/7
+          </p>
           <a
             href="https://wa.me/33644655224"
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 text-white transition hover:text-whatsapp"
+            className="shrink-0 font-medium text-white transition hover:text-[#ffb3b6]"
           >
             WhatsApp {WHATSAPP_DISPLAY}
           </a>
@@ -60,8 +64,8 @@ export function Header() {
               alt="Premium French IPTV"
               width={128}
               height={40}
-              className="h-4 w-auto object-contain md:h-8"
-              sizes="(max-width: 768px) 64px, 128px"
+              className="h-5 w-auto object-contain md:h-7"
+              sizes="(max-width: 768px) 80px, 112px"
               priority
             />
           </Link>
@@ -71,7 +75,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-3 py-2 text-[13px] text-muted transition hover:bg-surface-2 hover:text-text"
+                className="rounded-md px-3 py-2 text-[13px] text-muted transition hover:bg-surface-2 hover:text-text"
               >
                 {link.label}
               </Link>
@@ -82,14 +86,14 @@ export function Header() {
             <WhatsAppButton
               label="Essai gratuit"
               message={WHATSAPP_MESSAGES.essai}
-              variant="primary"
+              variant="outlineBlue"
               size="sm"
               eventLabel="header_essai"
             />
             <WhatsAppButton
               label="Acheter"
               message={WHATSAPP_MESSAGES.acheter}
-              variant="outline"
+              variant="accent"
               size="sm"
               showIcon={false}
               eventLabel="header_acheter"
@@ -98,7 +102,7 @@ export function Header() {
 
           <button
             type="button"
-            className="flex size-9 items-center justify-center rounded-full ring-1 ring-line xl:hidden"
+            className="flex size-9 items-center justify-center rounded-md ring-1 ring-line xl:hidden"
             aria-label="Ouvrir le menu"
             onClick={() => setOpen(true)}
           >
@@ -122,14 +126,14 @@ export function Header() {
                   alt="Premium French IPTV"
                   width={64}
                   height={20}
-                  className="h-4 w-auto object-contain"
-                  sizes="64px"
+                  className="h-5 w-auto object-contain"
+                  sizes="80px"
                 />
                 <button
                   type="button"
                   aria-label="Fermer le menu"
                   onClick={() => setOpen(false)}
-                  className="flex size-10 items-center justify-center rounded-full bg-surface-2 text-text ring-1 ring-line transition hover:bg-blue hover:text-white hover:ring-blue"
+                  className="flex size-10 items-center justify-center rounded-md bg-surface-2 text-text ring-1 ring-line transition hover:bg-red hover:text-white hover:ring-red"
                 >
                   <X strokeWidth={1.75} className="size-5" />
                 </button>
@@ -157,7 +161,7 @@ export function Header() {
                 <WhatsAppButton
                   label="Essai gratuit"
                   message={WHATSAPP_MESSAGES.essai}
-                  variant="primary"
+                  variant="outlineBlue"
                   size="sm"
                   className="min-w-0 flex-1"
                   eventLabel="mobile_menu_essai"
@@ -165,7 +169,7 @@ export function Header() {
                 <WhatsAppButton
                   label="Acheter"
                   message={WHATSAPP_MESSAGES.acheter}
-                  variant="outline"
+                  variant="accent"
                   size="sm"
                   showIcon={false}
                   className="min-w-0 flex-1"

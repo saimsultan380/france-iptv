@@ -1,13 +1,18 @@
 import { Hero } from "@/components/sections/Hero";
-import { TrustStrip } from "@/components/sections/TrustStrip";
-import { WhyUs } from "@/components/sections/WhyUs";
 import { Contents } from "@/components/sections/Contents";
-import { Sport } from "@/components/sections/Sport";
-import { Compatibility } from "@/components/sections/Compatibility";
 import { Pricing } from "@/components/sections/Pricing";
+import { Sport } from "@/components/sections/Sport";
+import { WhyUs } from "@/components/sections/WhyUs";
+import { AbonnementGuide } from "@/components/sections/AbonnementGuide";
+import { Compatibility } from "@/components/sections/Compatibility";
+import { AppsCompatible } from "@/components/sections/AppsCompatible";
 import { HowItWorks } from "@/components/sections/HowItWorks";
-import { TrialBanner } from "@/components/sections/TrialBanner";
-import { Reviews } from "@/components/sections/Reviews";
+import { PremiumChannels } from "@/components/sections/PremiumChannels";
+import { Reseller } from "@/components/sections/Reseller";
+import { SupportRenewal } from "@/components/sections/SupportRenewal";
+import { HowToChoose } from "@/components/sections/HowToChoose";
+import { M3uXtream } from "@/components/sections/M3uXtream";
+import { FreeVsPremium } from "@/components/sections/FreeVsPremium";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { PLANS, TIER_LABELS } from "@/data/plans";
@@ -17,7 +22,7 @@ const productJsonLd = {
   "@type": "Product",
   name: "Abonnement IPTV France Premium French IPTV",
   description:
-    "Abonnement IPTV France avec chaînes, VOD et sport — formules Standard et Premium 4K.",
+    "Découvrez Premium French IPTV : meilleur IPTV France, abonnements IPTV France, French IP TV, contenus HD et 4K, et applications compatibles.",
   brand: { "@type": "Brand", name: "Premium French IPTV" },
   offers: PLANS.map((plan) => ({
     "@type": "Offer",
@@ -37,15 +42,20 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
       <Hero />
-      <TrustStrip />
-      <WhyUs />
       <Contents />
-      <Sport />
-      <Compatibility />
       <Pricing />
+      <Sport />
+      <WhyUs />
+      <AbonnementGuide />
+      <Compatibility />
+      <AppsCompatible />
       <HowItWorks />
-      <TrialBanner />
-      <Reviews />
+      <PremiumChannels />
+      <Reseller />
+      <SupportRenewal />
+      <HowToChoose />
+      <M3uXtream />
+      <FreeVsPremium />
       <Faq />
       <FinalCta />
     </>

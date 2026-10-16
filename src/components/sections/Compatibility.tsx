@@ -1,80 +1,64 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { APPS, DEVICES } from "@/data/home";
+import { DEVICES, DEVICES_SECTION } from "@/data/home";
 import { Section } from "@/components/ui/Section";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { DeviceIcon } from "@/components/graphics/DeviceIcon";
 
 export function Compatibility() {
   return (
-    <Section tone="white">
-      <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+    <Section id="appareils" tone="white" hairline>
+      <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-            Compatibilité
-          </p>
-          <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-            Sur vos écrans, sans friction.
+          <h2 className="font-display text-3xl leading-tight tracking-tight md:text-[2.6rem]">
+            {DEVICES_SECTION.h2}
           </h2>
-          <p className="mt-4 text-muted">
-            Smart TV, mobile, box ou PC — M3U et Xtream Codes supportés.
+          <p className="mt-4 text-base leading-relaxed text-muted">
+            {DEVICES_SECTION.intro}
           </p>
-          <div className="mt-6 flex flex-wrap gap-4 text-sm">
-            <Link
-              href="/abonnement-iptv-12-mois-smart-tv-guide/"
-              className="inline-flex items-center gap-1 font-medium text-blue-bright hover:underline"
-            >
-              Guide Smart TV <ArrowUpRight className="size-4" strokeWidth={1.5} />
-            </Link>
-            <Link
-              href="/iptv-smarters-pro/"
-              className="inline-flex items-center gap-1 font-medium text-blue-bright hover:underline"
-            >
-              IPTV Smarters Pro <ArrowUpRight className="size-4" strokeWidth={1.5} />
-            </Link>
-          </div>
+
+          <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-3">
+            {DEVICES.map((device, i) => {
+              const red = i % 2 === 1;
+              return (
+                <li
+                  key={device.id}
+                  className="flex items-center gap-3 rounded-md border border-line bg-surface px-3.5 py-3.5"
+                >
+                  <span
+                    className={
+                      red
+                        ? "flex size-9 shrink-0 items-center justify-center rounded-md bg-red/8 text-red"
+                        : "flex size-9 shrink-0 items-center justify-center rounded-md bg-blue/8 text-blue"
+                    }
+                  >
+                    <DeviceIcon id={device.id} />
+                  </span>
+                  <span className="text-[15px] font-medium leading-snug text-text">
+                    {device.label}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+
+          <p className="mt-6 text-sm leading-relaxed text-muted">
+            {DEVICES_SECTION.note}
+          </p>
         </Reveal>
 
-        <Reveal delay={0.1} variant="scale">
-          <div className="relative">
+        <Reveal delay={0.06}>
+          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
             <Image
               src="/devices.webp"
-              alt="Appareils compatibles Premium French IPTV"
-              width={800}
-              height={520}
-              className="h-auto w-full object-contain"
+              alt="Appareils compatibles avec Premium French IPTV"
+              width={720}
+              height={540}
+              className="mx-auto h-auto max-h-[200px] w-full object-contain sm:max-h-none"
+              sizes="(max-width: 1024px) 480px, 560px"
             />
           </div>
         </Reveal>
       </div>
-
-      <Stagger className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4" stagger={0.06} delay={0.05}>
-        {DEVICES.map((device) => (
-          <StaggerItem key={device.id}>
-            <div className="glass-card glass-card-hover flex flex-col items-start gap-3 rounded-2xl p-5">
-              <DeviceIcon id={device.id} className="text-blue" />
-              <span className="text-sm font-medium">{device.label}</span>
-            </div>
-          </StaggerItem>
-        ))}
-      </Stagger>
-
-      <Reveal className="mt-10">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-          Applications compatibles
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {APPS.map((app) => (
-            <span
-              key={app}
-              className="glass-chip rounded-full px-3 py-1.5 text-xs font-medium text-muted"
-            >
-              {app}
-            </span>
-          ))}
-        </div>
-      </Reveal>
     </Section>
   );
 }

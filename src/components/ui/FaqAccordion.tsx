@@ -23,15 +23,15 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
               type="button"
               aria-expanded={open}
               onClick={() => setOpenId(open ? null : item.id)}
-              className="flex w-full items-start justify-between gap-6 py-5 text-left text-text transition-colors hover:text-blue"
+              className="flex w-full items-start justify-between gap-6 py-5 text-left text-text transition-colors hover:text-red"
             >
               <span className="font-display text-lg leading-snug tracking-tight md:text-xl">
                 {item.question}
               </span>
               <span
                 className={cn(
-                  "mt-1 flex size-8 shrink-0 items-center justify-center rounded-full ring-1 ring-line transition-all duration-300",
-                  open && "rotate-45 bg-blue text-white ring-blue",
+                  "mt-1 flex size-8 shrink-0 items-center justify-center rounded-md ring-1 ring-line transition-all duration-300",
+                  open && "rotate-45 bg-red text-white ring-red",
                 )}
               >
                 <Plus className="size-4" strokeWidth={1.5} />

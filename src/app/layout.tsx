@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Geist } from "next/font/google";
+import { Manrope, Syne } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
 import "./globals.css";
 
-const geist = Geist({
-  variable: "--font-geist",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const display = Bricolage_Grotesque({
+const display = Syne({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://premiumfrenchiptv.fr"),
   title: {
-    default: "Premium IPTV France 4K Ultra HD | Premium French IPTV",
+    default:
+      "Meilleur IPTV France : Abonnements IPTV France - French IP TV",
     template: "%s | Premium French IPTV",
   },
   description:
-    "Abonnement IPTV France premium : 20 000+ chaînes, VOD, sport en direct, qualité jusqu'en 4K. Essai gratuit et activation rapide sur WhatsApp.",
+    "Découvrez Premium French IPTV : meilleur IPTV France, abonnements IPTV France, French IP TV, contenus HD et 4K, et applications compatibles pour vous.",
   alternates: {
     canonical: "/",
     languages: { "fr-FR": "/" },
@@ -30,16 +32,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "Premium French IPTV",
-    title: "Premium IPTV France 4K Ultra HD",
+    title: "Meilleur IPTV France : Abonnements IPTV France - French IP TV",
     description:
-      "Streaming fluide, chaînes françaises et internationales, films, séries et sport — dès 12€/mois.",
+      "Découvrez Premium French IPTV : meilleur IPTV France, abonnements IPTV France, French IP TV, contenus HD et 4K, et applications compatibles pour vous.",
     images: [{ url: "/logo.jpeg", width: 1200, height: 630, alt: "Premium French IPTV" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium IPTV France 4K Ultra HD",
+    title: "Meilleur IPTV France : Abonnements IPTV France - French IP TV",
     description:
-      "Streaming fluide, chaînes françaises et internationales, films, séries et sport — dès 12€/mois.",
+      "Découvrez Premium French IPTV : meilleur IPTV France, abonnements IPTV France, French IP TV, contenus HD et 4K, et applications compatibles pour vous.",
     images: ["/logo.jpeg"],
   },
   icons: {
@@ -70,7 +72,7 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${geist.variable} ${display.variable} h-full antialiased`}>
+    <html lang="fr" className={`${manrope.variable} ${display.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-bg font-sans text-text antialiased">
         <script
           type="application/ld+json"
