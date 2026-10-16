@@ -12,7 +12,7 @@ export function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden bg-surface">
+    <section className="relative overflow-x-clip bg-surface">
       <div className="france-hairline h-[2px] w-full" />
 
       <Container className="grid items-center gap-10 py-12 md:gap-12 md:py-16 lg:grid-cols-2 lg:py-20">
@@ -77,7 +77,7 @@ export function Hero() {
           initial={{ opacity: 0, y: reduce ? 0 : 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="relative w-full -mx-5 md:-mx-8 lg:mx-0"
+          className="relative w-[calc(100%+2.5rem)] -mx-5 md:w-[calc(100%+4rem)] md:-mx-8 lg:mx-0 lg:w-full"
         >
           <div className="relative aspect-[16/10] max-h-[220px] overflow-hidden bg-surface-2 sm:aspect-[5/4] sm:max-h-none lg:rounded-lg">
             <Image
